@@ -31,7 +31,7 @@ func initDB() {
 		ServerName: "127.0.0.1:3306",
 		User:       "root",
 		Password:   "password",
-		DB:         "demographics",
+		DB:         "Aadharcard",
 	}
 
 	connectionString := database.GetConnectionString(config)
