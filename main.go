@@ -11,11 +11,19 @@ import (
 )
 
 func main() {
+
 	initDB()
+
 	log.Println("Starting the HTTP server on port 8090")
 	router := mux.NewRouter().StrictSlash(true)
 	initaliseHandlers(router)
 	log.Fatal(http.ListenAndServe(":8090", router))
+
+}
+
+type Person struct {
+	FirstName string
+	LastName  string
 }
 
 func initaliseHandlers(router *mux.Router) {
@@ -31,7 +39,7 @@ func initDB() {
 		ServerName: "127.0.0.1:3306",
 		User:       "root",
 		Password:   "password",
-		DB:         "demographics",
+		DB:         "aadharcard",
 	}
 
 	connectionString := database.GetConnectionString(config)
@@ -40,5 +48,4 @@ func initDB() {
 	if err != nil {
 		panic(err.Error())
 	}
-
 }

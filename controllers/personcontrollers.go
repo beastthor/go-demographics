@@ -13,11 +13,11 @@ import (
 
 // GetAllPerson get all person data
 func GetAllPerson(w http.ResponseWriter, r *http.Request) {
-	var persons []entity.Person
-	database.Connector.Find(&persons)
+	var person []entity.Person
+	database.Connector.Find(&person)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(persons)
+	json.NewEncoder(w).Encode(person)
 
 }
 
