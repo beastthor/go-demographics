@@ -2,18 +2,20 @@ package entity
 
 //Person object for REST(CRUD)
 
-//type Address struct {
-//	Address string `json:"address"`
-//}
+type Address struct {
+	Id      int    `json:"id"`
+	Address string `json:"address"`
+}
 
-//type Contact struct {
-//	phoneNumber int `json:"phone"`
-//}
+type Contact struct {
+	Id          int `json:"id"`
+	PhoneNumber int `json:"phone"`
+}
 
 type Person struct {
 	Id        int    `json:"id"`
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
-	// Age       int    `json:"age"`
-	// Contact string
+	Address   string
+	Contact   string
 }
